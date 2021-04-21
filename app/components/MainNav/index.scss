@@ -1,0 +1,181 @@
+.mainNav:not(.mobile){
+    @media (max-width: 860px) {
+        display: none;
+    }
+    ul {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            margin: 0 1em;
+            position: relative;
+
+            a,button {
+                color: black;
+                // color: #FFB135;
+                text-decoration: none;
+                transition: color 0.2s ease;
+                position: relative;
+                font-weight: 300;
+                font-size: 1em;
+                cursor: pointer;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    width: 0;
+                    border-bottom: 2px solid #FFB135;
+                    transition: all 0.2s ease;
+                }
+
+                &:hover, &.active {
+                    &:after{
+                        width: 100%;
+                    }
+                }
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                right: 0px;
+                width: 12em;
+                background-color: #f7f7f7;
+                padding: 1em;
+                text-align: right;
+
+                li {
+                    margin: 0;
+                    margin-bottom: 2em;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            button {
+                background-color: transparent !important;
+                border: none;
+                padding: 0;
+
+                &#registerButtonBox,&#accountBoxButton {
+                    i {
+                        font-size: 1em;
+                        margin-right: .2em;
+                    }
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.button {
+    font-weight: 500 !important;
+    transition: all .2s ease !important;
+    &:hover {
+        color: #FFB135 !important;
+        &:after {
+            width: 0 !important;
+        }
+    }
+}
+
+.mainNav.mobile {
+    display: none;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+
+
+
+    a,button {
+        font-size: 1.3em;
+        position: relative;
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            border-bottom: 2px solid #FFB135;
+            transition: all 0.2s ease;
+        }
+
+        &:hover, &.active {
+            &:after{
+                width: 100%;
+            }
+        }
+    }
+
+    button {
+        background-color: transparent !important;
+        border: none;
+        padding: 0;
+
+        &#registerButtonBox,&#accountBoxButton {
+            i {
+                font-size: 1em;
+                margin-right: .2em;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    >ul {
+        list-style: none;
+        padding-left: 0;
+
+        >li {
+            margin: 2em 0;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 1em;
+
+            >li {
+                margin: .5em 0;
+
+            }
+        }
+    }
+
+    @media (max-width: 860px) {
+        &.active {
+           display: block;
+        }
+    }
+
+
+}
+
+.button-mobile {
+    font-size: 1.5em;
+    cursor: pointer;
+
+    @media (min-width: 860px) {
+        display: none !important;
+    }
+}
+
+.closeMenu {
+    position: absolute;
+    right: 2em;
+    font-size: 1.5em;
+    cursor: pointer;
+}

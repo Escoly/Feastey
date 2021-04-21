@@ -1,0 +1,48 @@
+.footer {
+    background-color: #222222;
+    border-top: 1px solid rgb(65, 65, 65);
+    padding: 1em;
+    z-index: 2;
+
+    >div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    @media (max-width: 860px) {
+        flex-direction: column;
+    }
+
+        >div {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex: 1;
+            >* {
+                margin: .5em 1em;
+            }
+
+
+        }
+
+        * {
+            color: white;
+        }
+    }
+
+    .all-businesses {
+        color: gray;
+    }
+
+    .home-link {
+        @media (max-width: 860px) {
+            margin-bottom: 1em;
+        }
+
+        img {
+            max-width: 120px;
+        }
+    }
+}
